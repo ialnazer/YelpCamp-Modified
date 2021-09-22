@@ -30,11 +30,11 @@ module.exports.index = async (req, res) => {
         .limit(limit * 1)
         .skip((page - 1) * limit)
         .exec();//= await Campground.find()
-    if (page == 1 && campgrounds.length == 0) {
-        // No Camps at all
-        req.flash('error', 'Cannot find campgrounds');
-        return res.redirect('/') // to homepage
-    }
+    // if (page == 1 && campgrounds.length == 0) {
+    //     // No Camps at all
+    //     req.flash('error', 'Cannot find campgrounds');
+    //     return res.redirect('/') // to homepage
+    // }
     if (page != 1 && campgrounds.length == 0) {
         // No more pages
         req.flash('error', 'No more campgrounds');
