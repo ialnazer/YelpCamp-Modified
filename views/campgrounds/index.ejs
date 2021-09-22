@@ -59,8 +59,8 @@
                 function debounce(e, t = 300) { let u; return (...i) => { clearTimeout(u), u = setTimeout(() => { e.apply(this, i) }, t) } }
             </script> -->
             <script>
-                const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
-                const allCampgrounds = { features: <% -JSON.stringify(allCampgrounds) %>};
+                const mapToken = '<%- process.env.MAPBOX_TOKEN %>';
+                const allCampgrounds = { features: <%- JSON.stringify(allCampgrounds) %>};
 
             </script>
             <script src="/javascripts/clusterMap.js"></script>
