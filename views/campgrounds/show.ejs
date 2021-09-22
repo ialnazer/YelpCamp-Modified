@@ -49,17 +49,17 @@
                 </ul>
                 <% if(currentUser && campground.author.equals(currentUser._id)) { %>
                     <div class="card-body">
-                        <a href="http://localhost:8000/campgrounds/<%= campground._id %>/edit"
+                        <a href="/campgrounds/<%= campground._id %>/edit"
                             class="card-link btn btn-info">Edit</a>
                         <form class="d-inline"
-                            action="http://localhost:8000/campgrounds/<%= campground._id %>?_method=DELETE"
+                            action="/campgrounds/<%= campground._id %>?_method=DELETE"
                             method="POST">
                             <button class="btn btn-danger">Delete</button>
                         </form>
                     </div>
                     <% } %>
                         <div class="card-footer">
-                            <a href="http://localhost:8000/campgrounds" class="card-link btn btn-info">All
+                            <a href="/campgrounds" class="card-link btn btn-info">All
                                 Campgrounds</a>
                         </div>
             </div>
@@ -69,7 +69,7 @@
             <% if(currentUser) { %>
                 <h3>Leave a Review</h3>
                 <form class="mb-3 validated-form" novalidate
-                    action="http://localhost:8000/campgrounds/<%= campground._id %>/reviews" method="POST">
+                    action="/campgrounds/<%= campground._id %>/reviews" method="POST">
                     <!-- <div class="mb-3">
                         <label class="form-label" for="rating">Rating</label>
                         <input class="form-range" type="range" name="review[rating]" id="rating" min="1" max="5">
@@ -119,12 +119,12 @@
                                     <% if(currentUser && review.author.equals(currentUser._id)) { %>
                                         <div class="card-body ml-0">
                                             <form class="d-inline"
-                                                action="http://localhost:8000/campgrounds/<%= campground._id %>/reviews/<%= review._id %>/edit"
+                                                action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>/edit"
                                                 method="GET">
                                                 <button class="btn btn-sm btn-info">Edit</button>
                                             </form>
                                             <form class="d-inline"
-                                                action="http://localhost:8000/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                                action="/campgrounds/<%= campground._id %>/reviews/<%= review._id %>?_method=DELETE"
                                                 method="POST">
                                                 <button class="btn btn-sm btn-danger">Delete</button>
                                             </form>
@@ -138,7 +138,7 @@
                                             <% if(currentReviewPage !==1 ){ %>
                                                 <div class="ml-0 mb-3 d-inline">
                                                     <a class="btn btn-info card-link btn-sm" id="linkToFirstPage"
-                                                        href="http://localhost:8000/campgrounds/<%= campground._id %>?page=<%= currentReviewPage - 1 %> %>">Previous
+                                                        href="/campgrounds/<%= campground._id %>?page=<%= currentReviewPage - 1 %> %>">Previous
                                                         Page</a>
                                                 </div>
                                                 <%} %>
@@ -146,7 +146,7 @@
 
                                                         <div class="ml-0 mb-3 d-inline">
                                                             <a class="btn btn-info card-link btn-sm" id="linkToNextPage"
-                                                                href="http://localhost:8000/campgrounds/<%= campground._id %>?page=<%= currentReviewPage + 1 %>">Next
+                                                                href="/campgrounds/<%= campground._id %>?page=<%= currentReviewPage + 1 %>">Next
                                                                 Page</a>
                                                         </div>
                                                         <% }else{%>
@@ -155,7 +155,7 @@
                                                                 <div class="ml-0 mb-3 d-inline">
                                                                     <a class="btn btn-info card-link btn-sm"
                                                                         id="linkToFirstPage"
-                                                                        href="http://localhost:8000/campgrounds/<%= campground._id %>?page=1 %>">Back
+                                                                        href="/campgrounds/<%= campground._id %>?page=1 %>">Back
                                                                         To First Page</a>
                                                                 </div>
                                                                 <%} %>

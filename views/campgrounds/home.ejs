@@ -18,12 +18,12 @@
                 <h3 class="mb-0 ml-auto">YelpCamp</h3>
                 <nav class="nav nav-masthead ms-auto">
                     <a href="#" class="active nav-link" aria-current="page">Home</a>
-                    <a href="http://localhost:8000/campgrounds" class="nav-link">Campgrounds</a>
+                    <a href="/campgrounds" class="nav-link">Campgrounds</a>
                     <% if(! currentUser){ %>
-                        <a href="http://localhost:8000/login" class="nav-link">Login</a>
-                        <a href="http://localhost:8000/register" class="nav-link">Register</a>
+                        <a href="/login" class="nav-link">Login</a>
+                        <a href="/register" class="nav-link">Register</a>
                         <% }else{ %>
-                            <a href="http://localhost:8000/logout" class="nav-link">Logout</a>
+                            <a href="/logout" class="nav-link">Logout</a>
                             <% } %>
 
 
@@ -34,8 +34,8 @@
             <h1>YelpCamp</h1>
             <p class="lead">Welcome to YelpCamp! <br> Jump right in and explore our many campgrounds. <br>
                 Feel free to share some of your own and comment on others!</p>
-                <a href="http://localhost:8000/campgrounds" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View
-                    Campgrounds</a>
+            <a href="/campgrounds" class="btn btn-lg btn-secondary font-weight-bold border-white bg-white">View
+                Campgrounds</a>
         </main>
         <footer class="mt-auto text-white-50">
             <p>&copy; 2021 YelpCamp</p>
