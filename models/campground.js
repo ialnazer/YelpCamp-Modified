@@ -11,8 +11,8 @@ const imageSchema = new Schema({
 // imageSchema.virtual('thumbnail_hw400').get(function(){
 //     return this.url.replace('/upload','/upload/w_400')
 // })
-imageSchema.virtual('thumbnail_w200').get(function(){
-    return this.url.replace('/upload','/upload/w_200')
+imageSchema.virtual('thumbnail_w200').get(function () {
+    return this.url.replace('/upload', '/upload/w_200')
 })
 
 const CampgroundSchema = new Schema({
@@ -25,11 +25,11 @@ const CampgroundSchema = new Schema({
             type: String,
             enum: ['Point'],
             required: true
-          },
-          coordinates: {
+        },
+        coordinates: {
             type: [Number],
             required: true
-          }
+        }
     },
     images: [imageSchema],
     author: {
@@ -44,9 +44,9 @@ const CampgroundSchema = new Schema({
     ]
 }, opts);
 
-CampgroundSchema.virtual('properties.popUpMarkup').get(function(){
+CampgroundSchema.virtual('properties.popUpMarkup').get(function () {
     return `
-    <strong><a href="http://localhost:8000/campgrounds/${this._id}">${this.title}</a></strong>
+    <strong><a href="/campgrounds/${this._id}">${this.title}</a></strong>
     <p>${this.description.substring(0, 20)}...</p>
     `
 })
