@@ -2,8 +2,8 @@ mapboxgl.accessToken = mapToken//'pk.eyJ1IjoiaWFsbmF6ZXIiLCJhIjoiY2t0b2g2ejdhMDZ
 const map = new mapboxgl.Map({
     container: 'cluster-map', // container ID
     style: 'mapbox://styles/mapbox/light-v10', // style URL
-    center: [-130, 30], // starting position [lng, lat]
-    zoom: 3 // starting zoom
+    center: [-36, 30], // starting position [lng, lat]
+    zoom: 1 // starting zoom
 });
 // Add zoom and rotation controls to the map.
 map.addControl(new mapboxgl.NavigationControl());
@@ -16,7 +16,7 @@ map.on('load', () => {
         type: 'geojson',
         // Point to GeoJSON data. This example visualizes all M1.0+ earthquakes
         // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
-        data:allCampgrounds,
+        data: allCampgrounds,
         // {
         //     "features": allCampgrounds
         // },
