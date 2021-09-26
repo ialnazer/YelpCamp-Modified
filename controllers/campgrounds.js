@@ -25,7 +25,7 @@ const getPagingData = (data, page, limit) => {
 
 module.exports.index = async (req, res) => {
     const allCampgrounds = await Campground.find();
-    const { page = 1, limit = 2 } = req.query;
+    const { page = 1, limit = 3 } = req.query;
     const campgrounds = await Campground.find() // length will be = limit
         .limit(limit * 1)
         .skip((page - 1) * limit)
@@ -35,12 +35,16 @@ module.exports.index = async (req, res) => {
     //     req.flash('error', 'Cannot find campgrounds');
     //     return res.redirect('/') // to homepage
     // }
+    // get page count and current page
+    const campgroundCount = allCampgrounds.length
+    const campgroundPageCount = Math.ceil(campgroundCount / limit)
+    // server side page protection
     if (page != 1 && campgrounds.length == 0) {
         // No more pages
         req.flash('error', 'No more campgrounds');
-        return res.redirect('/campgrounds') // to campgrounds page 1
+        return res.redirect('/campgrounds') // to campgrounds page 1 (default value of page is 1)
     }
-    res.render('campgrounds/index.ejs', { allCampgrounds, campgrounds, currentPage: parseInt(page) });
+    res.render('campgrounds/index.ejs', { allCampgrounds, campgrounds, currentPage: parseInt(page), campgroundPageCount });
 };
 
 module.exports.renderNewForm = (req, res) => {

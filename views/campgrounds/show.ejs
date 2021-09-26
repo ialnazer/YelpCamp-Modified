@@ -133,30 +133,30 @@
 
                                 </div>
                                 <% }%>
-                                    <div class="card-body mb-3">
+                                    <div class="card-body mb-3 position-relative">
                                         <% if(campground.reviews.length){ %>
                                             <% if(currentReviewPage !==1 ){ %>
-                                                <div class="ml-0 mb-3 d-inline">
+                                                <div class="position-absolute bottom-0 start-0">
                                                     <a class="btn btn-info card-link btn-sm" id="linkToFirstPage"
-                                                        href="/campgrounds/<%= campground._id %>?page=<%= currentReviewPage - 1 %> %>">Previous
-                                                        Page</a>
+                                                        href="/campgrounds/<%= campground._id %>?page=<%= currentReviewPage - 1 %> %>">&NestedLessLess; Previous
+                                                        Reviews Page</a>
                                                 </div>
                                                 <%} %>
                                                     <% if(currentReviewPage < reviewPageCount){ %>
 
-                                                        <div class="ml-0 mb-3 d-inline">
+                                                        <div class="position-absolute bottom-0 end-0 d-inline">
                                                             <a class="btn btn-info card-link btn-sm" id="linkToNextPage"
                                                                 href="/campgrounds/<%= campground._id %>?page=<%= currentReviewPage + 1 %>">Next
-                                                                Page</a>
+                                                                Reviews Page &NestedGreaterGreater;</a>
                                                         </div>
                                                         <% }else{%>
                                                             <% if((currentReviewPage==reviewPageCount) &&
                                                                 (currentReviewPage !=1) ){ %>
-                                                                <div class="ml-0 mb-3 d-inline">
+                                                                <div class="position-absolute bottom-0 end-0 d-inline">
                                                                     <a class="btn btn-info card-link btn-sm"
                                                                         id="linkToFirstPage"
                                                                         href="/campgrounds/<%= campground._id %>?page=1 %>">Back
-                                                                        To First Page</a>
+                                                                        To First Reviews Page</a>
                                                                 </div>
                                                                 <%} %>
                                                                     <%} %>
