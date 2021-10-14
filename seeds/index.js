@@ -48,7 +48,7 @@ const seedDB = async () => {
           filename: 'YelpCamp/ruyoaxgf72nzpi4y6cdi'
         }
       ],//'https://source.unsplash.com/collection/483251',
-      description: 'my description is blank :)',
+      description: 'an amazing place to camp',
       price: price,
       author: '6144a7ed2c164d216a4935fe',
       geometry: {
